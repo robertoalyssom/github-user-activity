@@ -1,3 +1,5 @@
+// This file contains functions that generate readable descriptions of GitHub events.
+
 const onRepo = (text, { name }) => `${text} on ${name}`;
 const withCount = (verb, noun) => (event) =>
   onRepo(`${verb} ${event.count} ${noun}`, event);
