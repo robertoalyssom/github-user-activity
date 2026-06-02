@@ -1,7 +1,7 @@
 #!/usr/bin/env nodeiimport process from "process";
-import { fetchGithub } from "./fetchGithub.js";
-import { setEventMessage } from "./setEventMessage.js";
-import { summarizeEvents } from "./summarizeEvents.js";
+import { fetchGithub } from "./services/fetchGithub.js";
+import { setEventMessage } from "./src/setEventMessage.js";
+import { summarizeEvents } from "./src/summarizeEvents.js";
 
 const [, , ...args] = process.argv;
 const [username] = args;
