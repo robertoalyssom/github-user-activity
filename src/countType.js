@@ -1,8 +1,11 @@
 export function countType(events, accRepo) {
-  return events.filter((event) => {
+  let count = 0;
+
+  events.forEach((event) => {
     const isSameRepo = event.repo.name === accRepo.name;
     const isSameType = event.type === accRepo.type;
 
-    return isSameRepo && isSameType;
-  }).length;
+    if (isSameRepo && isSameType) count++;
+  });
+  return count;
 }
