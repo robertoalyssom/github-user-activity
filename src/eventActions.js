@@ -6,7 +6,7 @@ const withCount = (verb, noun) => (event) =>
 
 export const eventActions = {
   CommitCommentEvent: withCount("Created", "commit comment"),
-  CreateEvent: withCount("Created, branch or tag"),
+  CreateEvent: withCount("Created", "branch or tag"),
   DeleteEvent: withCount("Deleted", "branch or tag"),
   DiscussionCommentEvent: withCount("Commented on", "discussion"),
   DiscussionEvent: withCount("Created or updated", "discussion"),
