@@ -2,6 +2,7 @@
 import { fetchGithub } from "./services/fetchGithub.js";
 import { setEventMessage } from "./src/setEventMessage.js";
 import { summarizeEvents } from "./src/summarizeEvents.js";
+import printEventsWithColors from "./src/printEventsWithColors.js";
 
 const [, , ...args] = process.argv;
 const [username] = args;
@@ -16,4 +17,4 @@ const githubEvents = await fetchGithub(username);
 const repoEvents = summarizeEvents(githubEvents);
 const eventsMessages = setEventMessage(repoEvents);
 
-eventsMessages.forEach((message) => console.log("-", message));
+eventsMessages.forEach((message) => printEventsWithColors(message));
