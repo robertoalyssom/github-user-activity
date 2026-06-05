@@ -2,6 +2,7 @@ import { countType } from "./countType.js";
 
 export function summarizeEvents(events) {
   const repos = [];
+  let accRepo = {};
 
   events.forEach((event) => {
     const hasRepoAndEvent = repos.some(
@@ -9,11 +10,11 @@ export function summarizeEvents(events) {
     );
 
     if (!hasRepoAndEvent) {
-      const accRepo = {};
       accRepo.name = event.repo.name;
       accRepo.type = event.type;
       accRepo.count = countType(events, accRepo);
       repos.push(accRepo);
+      accRepo = {};
     }
   });
   return repos;
