@@ -1,4 +1,5 @@
-#!/usr/bin/env nodeiimport process from "process";
+#!/usr/bin/env node
+import process from "process";
 import { fetchGithub } from "./services/fetchGithub.js";
 import { setEventMessage } from "./src/setEventMessage.js";
 import { summarizeEvents } from "./src/summarizeEvents.js";
